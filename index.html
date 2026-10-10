@@ -34,12 +34,22 @@
 <body>
   <main>
     <h1>Edward “JiuJiu” Liu<br><span lang="zh-Hant">劉九思</span></h1>
-    <p>I'm a student away from Stanford working on <a href="https://reconero.com">Reconero</a> (YC F26).</p>
+    <p>I'm <span id="age">18</span>, on leave from Stanford, building <a href="https://reconero.com">Reconero</a> (YC F26).</p>
     <p>
       <a href="mailto:liuedward662@gmail.com">Email</a> ·
       <a href="https://github.com/jooj99">GitHub</a> ·
       <a href="https://www.linkedin.com/in/jiujiu-liu">LinkedIn</a>
     </p>
   </main>
+  <script>
+    const birthday = new Date(2008, 3, 28); // April 28, 2008
+    const today = new Date();
+    let age = today.getFullYear() - birthday.getFullYear();
+    if (today.getMonth() < birthday.getMonth() ||
+        (today.getMonth() === birthday.getMonth() && today.getDate() < birthday.getDate())) {
+      age--;
+    }
+    document.getElementById("age").textContent = age;
+  </script>
 </body>
 </html>
